@@ -1,0 +1,28 @@
+
+
+
+
+
+.categories{
+    border: solid lightgray 2px;
+    border-radius: 1%;
+    list-style: none;
+    padding: 0px;
+
+    li{
+        padding: 0.7em;
+        transition: 0.3s;
+        font-weight: 500;
+        font-size: 0.95em;
+        cursor: pointer;
+        &:hover{
+            background-color: hsl(214, 97%, 45%);
+            color: white;
+        }
+    }
+
+    li + li {
+        border-top:solid lightgray 0.1px;
+    }
+
+}

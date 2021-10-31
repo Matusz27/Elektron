@@ -1,0 +1,9 @@
+backend/env
+__pycache__/
+.DS_Store
+Thumbs.db
+node_modules/
+db.sqlite3
+settings.py
+workspace.code-workspace
+media/

@@ -1,0 +1,24 @@
+
+
+
+.nav--bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 2em;
+    background-color: hsl(208, 100%, 97%);
+    max-height: 70px;
+    border-bottom: 3px solid rgba(196, 196, 196, 0.5);
+    font-size: 0.8em;
+
+    .logo{
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        font-family: "Russo One";
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+    }
+}
