@@ -1,4 +1,4 @@
-"""graphql_api URL Configuration
+"""ecomerce URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -14,11 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from graphene_django.views import GraphQLView
-from .schema import schema
+from rest_framework import routers
+from django.urls import path, include
+from main import views
+
+router = routers.DefaultRouter()
+router.register(r'items', views.ItemViewSet)
+router.register(r'catogries', views.CategoriesViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

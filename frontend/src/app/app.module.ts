@@ -10,6 +10,7 @@ import { ItemsDisplayComponent } from './componets/items-display/items-display.c
 import { CartComponent } from './componets/cart/cart.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 @NgModule({
   declarations: [
     AppComponent,

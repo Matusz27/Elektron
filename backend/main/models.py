@@ -22,5 +22,3 @@ class Item(models.Model):
     def __str__(self):
         return self.name
     
-    def image_url(self):
-        return self.pic.url
