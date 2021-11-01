@@ -1,0 +1,13 @@
+
+
+
+.card{
+    border : solid lightgray 2px;
+    display: block;
+    border-radius: 3%;
+}
+
+
+.card + .card{
+    margin-top: 2em;
+}

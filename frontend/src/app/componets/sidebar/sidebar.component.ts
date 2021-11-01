@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs'
-import { map } from 'rxjs/operators'
+import { Category } from '../../interfaces/Categories'
+import { CategoriesService } from '../../services/categories.service'
 
 @Component({
   selector: 'app-sidebar',
@@ -8,10 +8,12 @@ import { map } from 'rxjs/operators'
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  constructor() { }
+	categories: Category[] = []
 
-   ngOnInit(): void {
-  }
+	constructor(private categoryService: CategoriesService) {}
 
-
+	ngOnInit(): void {
+		this.categoryService.getCategories().subscribe((categories) => (this.
+			categories = categories))
+	}
 }
