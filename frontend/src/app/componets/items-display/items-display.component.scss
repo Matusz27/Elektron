@@ -1,6 +1,13 @@
 
 
 
+.shop {
+    padding:  0px 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+
 .card{
     border : solid lightgray 2px;
     display: block;
@@ -11,3 +18,24 @@
 .card + .card{
     margin-top: 2em;
 }
+
+
+@media only screen and (min-width: 500px){
+    .card{
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .shop{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .shop{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+

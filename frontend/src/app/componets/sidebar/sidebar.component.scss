@@ -15,10 +15,11 @@
         font-weight: 500;
         font-size: 0.95em;
         cursor: pointer;
-        &:hover{
-            background-color: hsl(214, 97%, 45%);
-            color: white;
-        }
+    }
+
+    .active{
+        background-color: hsl(214, 97%, 45%);
+        color: white;
     }
 
     li + li {

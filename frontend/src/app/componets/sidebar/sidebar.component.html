@@ -1,4 +1,8 @@
 <ul class = "categories" >
-    <li>All Categories</li>
-    <li *ngFor="let category of categories">{{category.name}}</li>
+    <li 
+    [ngClass]="{'active' : category.id === currentCategory}" 
+    *ngFor="let category of categories"
+    (click)="changeCategory(category)">
+        {{category.name}}
+    </li>
 </ul>

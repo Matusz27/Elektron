@@ -2,6 +2,21 @@
 <img class = "item-image" src={{item.pic}}>
 <div class="info-text">
     <h3>{{item.name}}</h3>
-    <p>${{item.price}}</p>
+    <p>${{item.price.toFixed(2)}}</p>
 </div>
-<button class = "add-to-cart">Add to Cart</button>
+
+<ng-container
+  *ngIf="!returnFItemFromCart(item); then notInCart; else isInCart">
+</ng-container>
+
+<ng-template #notInCart>
+    <button (click)="addToCart(item)" class = "add-to-cart">Add to Cart</button>
+</ng-template>
+
+<ng-template #isInCart>
+    <div class="added-to-cart">
+        <button (click)="removeFromCart(item)" class="change-buttons">-</button>
+        <p>{{returnFItemFromCart(item).amount}} in cart</p>
+        <button (click)="addToCart(item)" class="change-buttons">+</button>
+    </div>
+</ng-template>
