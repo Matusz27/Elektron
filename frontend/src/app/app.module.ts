@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './componets/navbar/navbar.component';
 import { SidebarComponent } from './componets/sidebar/sidebar.component';
 import { CardComponent } from './componets/card/card.component';
-import { ItemsDisplayComponent } from './componets/items-display/items-display.component';
+import { ItemsDisplayComponent } from './pages/main-page/main-page.component';
 import { CartComponent } from './componets/cart/cart.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarComponent,
     CardComponent,
     ItemsDisplayComponent,
-    CartComponent
+    CartComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,

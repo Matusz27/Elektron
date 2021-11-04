@@ -35,6 +35,10 @@ export class CartService {
     this.Subject.next(this.cart)
   }
 
+  fetchCart(){
+    return this.cart
+  }
+
   onChange(): Observable<any>{
     return this.Subject.asObservable();
   }

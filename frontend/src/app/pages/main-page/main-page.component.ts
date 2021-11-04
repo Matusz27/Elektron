@@ -1,13 +1,13 @@
-import { UiService } from './../../services/ui.service';
-import { Items } from './../../interfaces/Items';
+import { UiService } from '../../services/ui.service';
+import { Items } from '../../interfaces/Items';
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from '../../services/items.service';
 import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-items-display',
-  templateUrl: './items-display.component.html',
-  styleUrls: ['./items-display.component.scss']
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.scss']
 })
 export class ItemsDisplayComponent implements OnInit {
 
