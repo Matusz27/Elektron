@@ -1,0 +1,28 @@
+
+
+
+
+
+.cart-change{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2em;
+}
+
+.item-image{
+    border-radius: 100%;
+    object-fit: cover;
+    width: 25%;
+}
+
+.item-name{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+}
+
+.item-price{
+    margin: 0px;
+    padding: 0px;
+}

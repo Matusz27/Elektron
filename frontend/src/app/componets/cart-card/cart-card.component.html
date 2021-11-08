@@ -1,0 +1,11 @@
+<app-add-remove-button-cart 
+    class="cart-change"
+    [item] = "item"
+    [amount] = "amount"
+>
+</app-add-remove-button-cart>
+<img class = "item-image" src={{item.pic}}>
+<div>
+    <h3 class = "item-name">{{item.name}}</h3>
+    <p class = "item-price">${{(item.price * amount).toFixed(2)}}</p>
+</div>

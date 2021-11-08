@@ -17,21 +17,18 @@ export class CardComponent implements OnInit {
   cart:Cart[] = []
 
   
-  
-  returnFItemFromCart(item:Items): any {
-    return this.cart.filter(i => i.item.id === item.id)[0]
-    }
+  itemInCart(item:Items): Cart{
+    return this.cartService.findItemInCart(item)
+  }
   
   constructor(private cartService:CartService) {
-    this.subscription = this.cartService.onChange().subscribe(cart => (this.cart = cart))
+    this.subscription = this.cartService.onChange().subscribe(cart => (
+      this.cart = cart
+      ))
   }
 
   addToCart(item:Items){
     this.cartService.addToCart(item)
-  }
-
-  removeFromCart(item:Items){
-    this.cartService.removeFromCart(item)
   }
 
   ngOnInit(): void {

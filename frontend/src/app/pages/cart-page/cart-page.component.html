@@ -1,4 +1,17 @@
 <main>
-    <h1>Shopping Cart</h1>
+    <h1 class= "headline">Shopping Cart</h1>
+    
+    <ng-container
+        *ngIf="cart.length !== 0; then itemsInCart; else noItemsIncart">
+    </ng-container>
+
+    <ng-template #noItemsIncart>
+        <p class="empty">Your Cart is empty!</p>
+    </ng-template>
+    
+    <ng-template #itemsInCart>
+        <app-cart-body class = "cart_main"></app-cart-body>
+    </ng-template>
+    
 </main>
 

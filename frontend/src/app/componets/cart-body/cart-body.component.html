@@ -1,0 +1,16 @@
+
+
+<div *ngIf="!mobile" class="informations">
+    <p class = "itemsInCart">You have {{cart_amount}} items inside the cart</p>
+    <p (click)="this.clearCart()"><fa-icon [icon] = "faTrash"></fa-icon>Clear Cart</p>
+</div>
+<app-cart-card
+    *ngFor="let item of cart"
+    [itemincart] ="item"
+    class = "card"
+    >
+</app-cart-card>
+<div class="checkout">
+    Total: {{cart_total}} $
+    <button>Check out</button>
+</div>

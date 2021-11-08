@@ -25,6 +25,7 @@ export class CartService {
     this.cart[indexofItemInCart].amount++
     this.Subject.next(this.cart)
   }
+  
 
   removeFromCart(item:Items):void{
     let indexofItemInCart = this.cart.findIndex( cart => cart.item.id === item.id)
@@ -33,6 +34,25 @@ export class CartService {
       this.cart.splice(indexofItemInCart, 1);
     }
     this.Subject.next(this.cart)
+  }
+
+  clearCart(){
+    this.cart = []
+    this.Subject.next(this.cart)
+  }
+
+  findItemInCart(item:Items): Cart {
+    return this.cart.filter(i => i.item.id === item.id)[0]
+    }
+
+  getCartAmount(){
+    return this.cart.reduce((acc:number, item:Cart) => {
+      return (acc + item.amount)}, 0)
+  }
+
+  getCartTotal(){
+    return this.cart.reduce((acc:number, item:Cart) => {
+      return (acc + (item.item.price * item.amount))}, 0)
   }
 
   fetchCart(){

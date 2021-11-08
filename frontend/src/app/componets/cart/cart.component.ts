@@ -1,4 +1,3 @@
-import { Cart } from './../../interfaces/Cart';
 import { Component, OnInit } from '@angular/core';
 import {faShoppingCart} from "@fortawesome/free-solid-svg-icons"
 import {Subscription} from 'rxjs';
@@ -17,9 +16,8 @@ export class CartComponent implements OnInit {
   cart_amount:number = 0
 
   constructor(private cartService:CartService) {
-    this.subscription = this.cartService.onChange().subscribe((cart) => {
-      this.cart_amount = cart.reduce((acc:number, item:Cart) => {
-        return (acc + item.amount)}, 0)
+    this.subscription = this.cartService.onChange().subscribe(() => {
+      this.cart_amount = cartService.getCartAmount()
       })
   }
 
