@@ -37,7 +37,8 @@ import { AddRemoveButtonCartComponent } from './componets/add-remove-button-cart
     FontAwesomeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

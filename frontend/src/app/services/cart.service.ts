@@ -1,6 +1,6 @@
 import { Items } from './../interfaces/Items';
 import { Cart } from '../interfaces/Cart';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 
@@ -13,7 +13,13 @@ export class CartService {
   private Subject = new Subject();
 
 
-  constructor() { }
+  constructor() {
+    let localcart = localStorage.getItem('cart')
+    console.log(localcart)
+    if (localcart){
+      this.cart = JSON.parse(localcart)
+    }
+  }
 
   addToCart(item:Items): void{
     let indexofItemInCart = this.cart.findIndex( cart => cart.item.id === item.id)
@@ -60,6 +66,7 @@ export class CartService {
   }
 
   onChange(): Observable<any>{
+    localStorage.setItem('cart', JSON.stringify(this.cart))
     return this.Subject.asObservable();
   }
 
