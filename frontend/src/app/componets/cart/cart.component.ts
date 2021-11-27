@@ -12,17 +12,16 @@ export class CartComponent implements OnInit {
 
   faShoppingCart = faShoppingCart;
 
-  subscription: Subscription;
-  cart_amount:number = 0
+  subscription!: Subscription;
+  cart_amount:number = this.cartService.getCartAmount()
 
   constructor(private cartService:CartService) {
-    this.subscription = this.cartService.onChange().subscribe(() => {
-      this.cart_amount = cartService.getCartAmount()
-      })
   }
 
-
   ngOnInit(): void {
+      this.subscription = this.cartService.onChange().subscribe(() => {
+    this.cart_amount = this.cartService.getCartAmount()
+    })
   }
 
 }

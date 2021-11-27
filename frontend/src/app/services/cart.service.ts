@@ -26,10 +26,12 @@ export class CartService {
     if (indexofItemInCart === -1){
       this.cart.push({item: item, amount: 1})
       this.Subject.next(this.cart)
+      localStorage.setItem('cart', JSON.stringify(this.cart))
       return
     }
     this.cart[indexofItemInCart].amount++
     this.Subject.next(this.cart)
+    localStorage.setItem('cart', JSON.stringify(this.cart))
   }
   
 
@@ -40,23 +42,25 @@ export class CartService {
       this.cart.splice(indexofItemInCart, 1);
     }
     this.Subject.next(this.cart)
+    localStorage.setItem('cart', JSON.stringify(this.cart))
   }
 
   clearCart(){
-    this.cart = []
+    this.cart.length = 0
     this.Subject.next(this.cart)
+    localStorage.setItem('cart', JSON.stringify(this.cart))
   }
 
   findItemInCart(item:Items): Cart {
     return this.cart.filter(i => i.item.id === item.id)[0]
     }
 
-  getCartAmount(){
+  getCartAmount(): number{
     return this.cart.reduce((acc:number, item:Cart) => {
       return (acc + item.amount)}, 0)
   }
 
-  getCartTotal(){
+  getCartTotal(): number{
     return this.cart.reduce((acc:number, item:Cart) => {
       return (acc + (item.item.price * item.amount))}, 0)
   }
@@ -66,7 +70,6 @@ export class CartService {
   }
 
   onChange(): Observable<any>{
-    localStorage.setItem('cart', JSON.stringify(this.cart))
     return this.Subject.asObservable();
   }
 

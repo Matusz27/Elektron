@@ -1,9 +1,6 @@
 <div class="cart">
-    <ng-container
-        *ngIf="cart_amount !== 0; then itemsInCart">
-    </ng-container>
-    <ng-template #itemsInCart>
-        <span class="count">{{cart_amount}}</span>
-    </ng-template>
+    <span *ngIf="cart_amount !== 0"
+        class="count">{{cart_amount}}
+    </span>
     <fa-icon [icon] = "faShoppingCart"></fa-icon>
 </div>
